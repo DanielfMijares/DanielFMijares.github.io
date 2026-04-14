@@ -23,7 +23,7 @@
             font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
             color: var(--text-main); 
-            background: #020617; /* Fallback color */
+            background: #020617; 
             overflow-x: hidden;
         }
 
@@ -38,7 +38,7 @@
             height: auto;
             z-index: -2;
             object-fit: cover;
-            opacity: 0.4; /* Oscurecemos el video para que el texto resalte */
+            opacity: 0.3; 
         }
         .bg-overlay {
             position: fixed;
@@ -76,20 +76,21 @@
 
         h2 { font-size: 2.5rem; margin-bottom: 40px; font-weight: 800; text-align: center; }
         
-        /* Projects with Visual Layout */
+        /* Projects with Abstract Visuals (No fake data) */
         .project-card { margin-bottom: 40px; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
         
-        /* Área para Imagen/Video del Proyecto */
         .project-visual {
             width: 100%;
-            height: 250px;
-            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop') center/cover;
+            height: 200px;
+            /* Abstract nodes / network */
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
             border-bottom: 1px solid var(--glass-border);
             position: relative;
         }
-        /* Cambia las imágenes de los otros proyectos con distintas URLs */
-        .visual-2 { background-image: url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1974&auto=format&fit=crop'); }
-        .visual-3 { background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop'); }
+        /* Abstract digital code/circuits */
+        .visual-2 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); }
+        /* Abstract cryptography/matrix */
+        .visual-3 { background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop'); }
 
         .project-content { padding: 35px; }
         .project-title { font-size: 1.8rem; color: #fff; font-weight: 800; display: block; margin-bottom: 15px; }
@@ -100,19 +101,32 @@
         .impact-box { background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 25px 0; font-size: 1.05rem; border-radius: 0 12px 12px 0; }
         
         /* Buttons */
-        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background: transparent; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
         .btn-primary { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); border: none; color: #000; font-weight: 800; box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 242, 254, 0.5); }
         .btn:hover:not(.btn-primary) { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-3px); }
+
+        .email-link { color: var(--text-muted); font-size: 1.1rem; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
+        .email-link:hover { color: var(--primary); }
 
         /* Author Section */
         .author-section { margin-top: 80px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
         .author-content { flex: 1; min-width: 300px; }
         .author-content h3 { font-size: 2.2rem; margin-bottom: 15px; background: -webkit-linear-gradient(0deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Elemento Visual del Libro */
-        .book-visual { flex: 0.5; min-width: 250px; height: 300px; background: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2112&auto=format&fit=crop') center/cover; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid var(--glass-border); }
+        /* Imagen de tu Libro Real */
+        .book-cover-img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: -15px 15px 35px rgba(0,0,0,0.8);
+            transform: perspective(800px) rotateY(-15deg);
+            transition: transform 0.4s ease;
+        }
+        .book-cover-img:hover {
+            transform: perspective(800px) rotateY(0deg);
+        }
 
         footer { text-align: center; margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); }
     </style>
@@ -129,15 +143,17 @@
             <h1>Estratega de Datos <span>& Operaciones</span></h1>
             <p class="hero-subtitle">Soy Daniel Mijares. Transformo la complejidad logística y financiera en rentabilidad medible mediante algoritmos predictivos y más de 15 años de liderazgo corporativo.</p>
             <div class="btn-group">
-                <a href="mailto:danielfmijares@gmail.com" class="btn btn-primary">Iniciar Proyecto</a>
-                <a href="https://www.linkedin.com/in/danielmijaresponce/" target="_blank" class="btn">LinkedIn Profile</a>
+                <a href="https://www.linkedin.com/in/danielmijaresponce/" target="_blank" class="btn btn-primary">Perfil de LinkedIn</a>
+                <a href="mailto:danielfmijares@gmail.com" class="email-link">
+                    📧 danielfmijares@gmail.com
+                </a>
             </div>
         </header>
 
         <section class="uvp-grid">
             <div class="glass-card uvp-card">
                 <h3>⚙️ Liderazgo Operativo</h3>
-                <p>Más de 15 años escalando operaciones globales en TTEC CX SOLUTIONS, asegurando eficiencia y entrega en entornos de alta presión.</p>
+                <p>Más de 15 años escalando operaciones globales en TTEC CX SOLUTIONS MEXICO, asegurando eficiencia y entrega en entornos de alta presión.</p>
             </div>
             <div class="glass-card uvp-card">
                 <h3>🧠 Ciencia de Datos</h3>
@@ -145,16 +161,15 @@
             </div>
             <div class="glass-card uvp-card">
                 <h3>📈 Visión Financiera</h3>
-                <p>Egresado en Gestión Financiera y fundador de Mijares Gestoría. Analizo los datos siempre con el ROI y el P&L en mente.</p>
+                <p>Egresado en Gestión Financiera y fundador de Mijares Gestoría Integral. Analizo los datos siempre con el ROI y el P&L en mente.</p>
             </div>
         </section>
 
         <section>
-            <h2>Casos de Estudio Interactivos</h2>
+            <h2>Casos de Estudio Predictivo</h2>
 
             <div class="glass-card project-card">
                 <div class="project-visual"></div>
-                
                 <div class="project-content">
                     <span class="project-title">Optimización Logística: Sweet Lift Taxi</span>
                     <div class="tech-tags">
@@ -204,10 +219,13 @@
                 <h3>Reparando el "Balde Agujereado"</h3>
                 <p>No importa qué tan avanzada sea la IA de una empresa si sus bases financieras están rotas. Como autor de <strong>"Más Allá de la Tanda"</strong>, aplico la misma filosofía a los negocios que a las finanzas personales: detectar fugas, optimizar recursos y escalar de manera inteligente.</p>
                 <div class="btn-group">
-                    <a href="https://a.co/d/0bPQi97X" target="_blank" class="btn btn-primary">Ver Libro en Amazon</a>
+                    <a href="https://a.co/d/0bPQi97X" target="_blank" class="btn btn-primary">Adquirir en Amazon Kindle</a>
                 </div>
             </div>
-            <div class="book-visual"></div>
+            
+            <div>
+                <img src="https://m.media-amazon.com/images/I/71VjSAEckDL._SY466_.jpg" alt="Portada Más Allá de la Tanda" class="book-cover-img">
+            </div>
         </section>
 
         <footer>
