@@ -50,10 +50,10 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; position: relative; z-index: 1; }
         
         /* Hero Section */
-        header { text-align: left; margin-bottom: 70px; }
+        header { text-align: left; margin-bottom: 60px; }
         h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
         h1 span { background: -webkit-linear-gradient(0deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-subtitle { font-size: 1.3rem; color: var(--text-muted); font-weight: 300; max-width: 750px; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); font-weight: 300; max-width: 850px; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); text-align: justify; }
         
         /* Glassmorphism Cards */
         .glass-card {
@@ -71,26 +71,31 @@
             border-color: rgba(0, 242, 254, 0.4);
         }
 
-        .uvp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 80px; }
+        /* Layout Grids */
+        .uvp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; margin-bottom: 80px; }
         .uvp-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; }
-
-        h2 { font-size: 2.5rem; margin-bottom: 40px; font-weight: 800; text-align: center; }
         
-        /* Projects with Abstract Visuals (No fake data) */
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; margin-bottom: 80px; }
+        .skill-item { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 20px; border-radius: 12px; }
+        .skill-item h4 { color: #fff; margin-bottom: 8px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .skill-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        h2 { font-size: 2.2rem; margin-bottom: 15px; font-weight: 800; text-align: left; }
+        .section-desc { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; }
+        
+        /* Projects */
         .project-card { margin-bottom: 40px; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
         
         .project-visual {
             width: 100%;
             height: 200px;
-            /* Abstract nodes / network */
-            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop') center/cover;
             border-bottom: 1px solid var(--glass-border);
             position: relative;
         }
-        /* Abstract digital code/circuits */
-        .visual-2 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); }
-        /* Abstract cryptography/matrix */
-        .visual-3 { background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop'); }
+        .visual-2 { background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); }
+        .visual-3 { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'); }
 
         .project-content { padding: 35px; }
         .project-title { font-size: 1.8rem; color: #fff; font-weight: 800; display: block; margin-bottom: 15px; }
@@ -101,137 +106,5 @@
         .impact-box { background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 25px 0; font-size: 1.05rem; border-radius: 0 12px 12px 0; }
         
         /* Buttons */
-        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background: transparent; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
-        .btn-primary { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); border: none; color: #000; font-weight: 800; box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 242, 254, 0.5); }
-        .btn:hover:not(.btn-primary) { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-3px); }
-
-        .email-link { color: var(--text-muted); font-size: 1.1rem; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
-        .email-link:hover { color: var(--primary); }
-
-        /* Author Section */
-        .author-section { margin-top: 80px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-        .author-content { flex: 1; min-width: 300px; }
-        .author-content h3 { font-size: 2.2rem; margin-bottom: 15px; background: -webkit-linear-gradient(0deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* Imagen de tu Libro Real */
-        .book-cover-img {
-            max-width: 250px;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: -15px 15px 35px rgba(0,0,0,0.8);
-            transform: perspective(800px) rotateY(-15deg);
-            transition: transform 0.4s ease;
-        }
-        .book-cover-img:hover {
-            transform: perspective(800px) rotateY(0deg);
-        }
-
-        footer { text-align: center; margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); }
-    </style>
-</head>
-<body>
-
-    <video autoplay loop muted playsinline class="video-bg">
-        <source src="https://player.vimeo.com/external/311651811.sd.mp4?s=d00922f51eb9996d744b1c5a9ddf571b002c9167&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
-    </video>
-    <div class="bg-overlay"></div>
-
-    <div class="container">
-        <header>
-            <h1>Estratega de Datos <span>& Operaciones</span></h1>
-            <p class="hero-subtitle">Soy Daniel Mijares. Transformo la complejidad logística y financiera en rentabilidad medible mediante algoritmos predictivos y más de 15 años de liderazgo corporativo.</p>
-            <div class="btn-group">
-                <a href="https://www.linkedin.com/in/danielmijaresponce/" target="_blank" class="btn btn-primary">Perfil de LinkedIn</a>
-                <a href="mailto:danielfmijares@gmail.com" class="email-link">
-                    📧 danielfmijares@gmail.com
-                </a>
-            </div>
-        </header>
-
-        <section class="uvp-grid">
-            <div class="glass-card uvp-card">
-                <h3>⚙️ Liderazgo Operativo</h3>
-                <p>Más de 15 años escalando operaciones globales en TTEC CX SOLUTIONS MEXICO, asegurando eficiencia y entrega en entornos de alta presión.</p>
-            </div>
-            <div class="glass-card uvp-card">
-                <h3>🧠 Ciencia de Datos</h3>
-                <p>Modelado predictivo, automatización y análisis complejo de datos. Convirtiendo ruido estadístico en decisiones de negocio.</p>
-            </div>
-            <div class="glass-card uvp-card">
-                <h3>📈 Visión Financiera</h3>
-                <p>Egresado en Gestión Financiera y fundador de Mijares Gestoría Integral. Analizo los datos siempre con el ROI y el P&L en mente.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Casos de Estudio Predictivo</h2>
-
-            <div class="glass-card project-card">
-                <div class="project-visual"></div>
-                <div class="project-content">
-                    <span class="project-title">Optimización Logística: Sweet Lift Taxi</span>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Time Series</span><span class="tech-tag">LightGBM</span><span class="tech-tag">Python</span>
-                    </div>
-                    <p><strong>El Problema:</strong> Fluctuaciones impredecibles en la demanda de taxis en aeropuertos, generando tiempos muertos inaceptables.</p>
-                    <div class="impact-box">
-                        <strong>Impacto:</strong> Modelo predictivo con remuestreo horario que anticipa picos de demanda (RECM 42.0), permitiendo despliegue proactivo de la flota.
-                    </div>
-                    <a href="https://gist.github.com/DanielfMijares/a28fb1ce1746bb13a057fe24cf7ff85e" class="btn" target="_blank">Inspeccionar Código →</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card">
-                <div class="project-visual visual-2"></div>
-                <div class="project-content">
-                    <span class="project-title">Tasación Automatizada: Rusty Bargain</span>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Gradient Boosting</span><span class="tech-tag">CatBoost</span><span class="tech-tag">Scikit-learn</span>
-                    </div>
-                    <p><strong>El Problema:</strong> Valuación manual de vehículos lenta y subjetiva, creando cuellos de botella en adquisiciones.</p>
-                    <div class="impact-box">
-                        <strong>Impacto:</strong> Sistema automatizado que equilibra velocidad de inferencia y precisión para entregar valuaciones financieras instantáneas.
-                    </div>
-                    <a href="https://gist.github.com/DanielfMijares/1a151c641f5a8919cca691557ed4e497" class="btn" target="_blank">Inspeccionar Código →</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card">
-                <div class="project-visual visual-3"></div>
-                <div class="project-content">
-                    <span class="project-title">Criptografía en ML: Sure Tomorrow</span>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Álgebra Lineal</span><span class="tech-tag">Data Privacy</span>
-                    </div>
-                    <p><strong>El Problema:</strong> Necesidad de entrenar modelos predictivos sin exponer datos personales financieros a violaciones de seguridad.</p>
-                    <div class="impact-box">
-                        <strong>Impacto:</strong> Algoritmo de ofuscación matricial. Datos ilegibles para humanos, pero matemáticamente perfectos para la IA.
-                    </div>
-                    <a href="https://gist.github.com/DanielfMijares/2514f69a2f16c70f454d66382cba1294" class="btn" target="_blank">Inspeccionar Código →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="glass-card author-section">
-            <div class="author-content">
-                <h3>Reparando el "Balde Agujereado"</h3>
-                <p>No importa qué tan avanzada sea la IA de una empresa si sus bases financieras están rotas. Como autor de <strong>"Más Allá de la Tanda"</strong>, aplico la misma filosofía a los negocios que a las finanzas personales: detectar fugas, optimizar recursos y escalar de manera inteligente.</p>
-                <div class="btn-group">
-                    <a href="https://a.co/d/0bPQi97X" target="_blank" class="btn btn-primary">Adquirir en Amazon Kindle</a>
-                </div>
-            </div>
-            
-            <div>
-                <img src="https://m.media-amazon.com/images/I/71VjSAEckDL._SY466_.jpg" alt="Portada Más Allá de la Tanda" class="book-cover-img">
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Daniel Fernando Mijares Ponce | Ciudad de México</p>
-        </footer>
-    </div>
-
-</body>
-</html>
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
+        .btn
